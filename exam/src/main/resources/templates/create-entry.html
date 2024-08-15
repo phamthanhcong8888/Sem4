@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New Entry</title>
+</head>
+<body>
+<h1>Create New Entry</h1>
+<form action="#" th:action="@{/entries}" th:object="${entry}" method="post">
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" placeholder="Title" required />
+
+    <label>Content:</label>
+    <textarea th:field="*{content}" placeholder="Content" required></textarea>
+
+    <label>Rate:</label>
+    <input type="number" th:field="*{rate}" placeholder="Rate" required />
+
+    <label>Author:</label>
+    <input type="text" th:field="*{author}" placeholder="Author" required />
+
+    <button type="submit">Add Entry</button>
+</form>
+<br />
+<a href="/entries">Back to Entries List</a>
+</body>
+</html>
